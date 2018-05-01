@@ -33,11 +33,25 @@ export function getPost(id) {
 }
 
 export function createPost(post, history) {
-
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/posts/${API_KEY}`, post).then((response) => {
+      dispatch({ type: 'CREATE_POST', payload: response.data });
+      history.push('/');
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
 }
 
-export function updatePost(post) {
 
+export function updatePost(post) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/, posts/${API_KEY}`, post).then((response) => {
+      dispatch({ type: 'UPDATE_POST', payload: response.data });
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
 }
 
 export function deletePost(id, history) {

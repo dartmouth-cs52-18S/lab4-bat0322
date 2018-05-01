@@ -2,27 +2,36 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as actions from '../actions';
+import { fetchPosts } from '../actions';
+import PostTile from '../components/post-tile';
 
 class Posts extends Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
 
+  renderPosts() {
+    const postTiles = [];
+    for (let i = 0; i < this.props.allPosts.length; i++) {
+      console.log('test');
+      console.log(this.props.allPosts[i].title);
+      postTiles.push(<PostTile key={i} post={this.props.allPosts[i]} />);
+    }
+    return postTiles;
+  }
+
   render() {
-    if (!this.props.allPostsState) {
+    if (!this.props.allPosts) {
       return (
         <div className="posts-container">
           Loading
         </div>
       );
     } else {
-      console.log(this.props);
-      console.log(this.props.allPostsState);
-      console.log(this.props.allPostsState.all);
+      console.log(this.props.allPosts);
       return (
         <div className="posts-container">
-          { this.props.allPostsState.all }
+          {this.renderPosts()}
         </div>
       );
     }
@@ -31,12 +40,12 @@ class Posts extends Component {
 
 const mapStateToProps = state => (
   {
-    allPostsState: state.posts,
+    allPosts: state.posts.all,
   }
 );
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchPosts: actions.fetchPosts }, dispatch);
+  return bindActionCreators({ fetchPosts }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts);
