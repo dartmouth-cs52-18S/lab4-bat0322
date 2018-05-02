@@ -7,6 +7,8 @@ import Post from '../containers/post';
 
 import '../style.scss';
 
+const url = require('../img/not-espn.png');
+
 const App = (props) => {
   return (
     <Router>
@@ -27,7 +29,7 @@ const App = (props) => {
 const Nav = (props) => {
   return (
     <nav>
-      <NavLink to="/" exact><img src="../src/img/not-espn.png" alt="Logo" /></NavLink>
+      <NavLink to="/" exact><img src={url} alt="Logo" /></NavLink>
       <ul>
         <li><NavLink to="/" exact>Scores</NavLink></li>
         <li><NavLink to="/posts/new">New Game</NavLink></li>
