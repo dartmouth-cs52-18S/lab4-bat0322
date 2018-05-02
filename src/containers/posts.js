@@ -13,8 +13,6 @@ class Posts extends Component {
   renderPosts() {
     const postTiles = [];
     for (let i = 0; i < this.props.allPosts.length; i++) {
-      console.log('test');
-      console.log(this.props.allPosts[i].title);
       postTiles.push(<PostTile key={i} post={this.props.allPosts[i]} />);
     }
     return postTiles;

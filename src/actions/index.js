@@ -22,7 +22,7 @@ export function fetchPosts() {
   };
 }
 
-export function getPost(id) {
+export function fetchPost(id) {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`).then((response) => {
       dispatch({ type: 'FETCH_POST', post: response.data });
@@ -44,10 +44,10 @@ export function createPost(post, history) {
 }
 
 
-export function updatePost(post) {
+export function updatePost(id, post) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/, posts/${API_KEY}`, post).then((response) => {
-      dispatch({ type: 'UPDATE_POST', payload: response.data });
+    axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post).then((response) => {
+      dispatch({ type: 'UPDATE_POST', post: response.data });
     }).catch((error) => {
       console.log(error);
     });
@@ -58,22 +58,9 @@ export function deletePost(id, history) {
   return (dispatch) => {
     axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`).then((response) => {
       dispatch({ type: 'DELETE_POST', newState: response.data });
+      history.push('/');
     }).catch((error) => {
       console.log(error);
     });
   };
 }
-
-// export function increment() {
-//   return {
-//     type: ActionTypes.INCREMENT,
-//     payload: null,
-//   };
-// }
-
-// export function decrement() {
-//   return {
-//     type: ActionTypes.DECREMENT,
-//     payload: null,
-//   };
-// }

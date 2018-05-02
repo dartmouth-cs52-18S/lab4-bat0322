@@ -3,18 +3,9 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-do
 
 import NewPost from '../containers/new-post';
 import Posts from '../containers/posts';
+import Post from '../containers/post';
 
 import '../style.scss';
-
-// const Posts = (props) => {
-//   return <div>Posts</div>;
-// };
-// const NewPost = (props) => {
-//   return <div>New Post</div>;
-// };
-const Post = (props) => {
-  return <div>Post</div>;
-};
 
 const App = (props) => {
   return (

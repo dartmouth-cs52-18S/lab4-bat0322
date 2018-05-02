@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as actions from '../actions';
+import { createPost } from '../actions';
 
 class NewPost extends Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class NewPost extends Component {
 
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createPost: actions.createPost }, dispatch);
+  return bindActionCreators({ createPost }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(NewPost);
