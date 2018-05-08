@@ -36,8 +36,8 @@ class Post extends Component {
   }
 
   onSaveClick() {
+    // this prevents empty Strings from being sent to server, would appear as default state
     this.props.updatePost(this.props.match.params.postID, this.state.post);
-    // this.props.fetchPost(this.props.match.params.postID);
     this.setState({ editing: false });
   }
 

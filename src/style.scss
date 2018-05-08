@@ -63,6 +63,7 @@ nav {
     height: 150px;
     width: 150px;
     border-radius: 5px;
+    background-color: white;
   }
 
   .text-container{
@@ -97,6 +98,9 @@ nav {
     img {
       margin: 10px;
       border-radius: 5px;
+      height: 225px;
+      width: 225px;
+      background-color: white;
     }
     .title-card-with-buttons {
       display: flex;
@@ -108,12 +112,17 @@ nav {
         padding: 5px;
       }
       .title-with-tags {
+        display: flex;
+        flex-direction: column;
         text-align: right;
         h1 {
           font-size: 2.5em;
         }
       }
     }
+  }
+  .content-container {
+    padding: 10px;
   }
 }
 

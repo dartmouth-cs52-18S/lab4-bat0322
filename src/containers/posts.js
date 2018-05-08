@@ -26,7 +26,6 @@ class Posts extends Component {
         </div>
       );
     } else {
-      console.log(this.props.allPosts);
       return (
         <div className="posts-container">
           {this.renderPosts()}
