@@ -96,6 +96,12 @@ class Post extends Component {
     }
   }
 
+  renderAuthor() {
+    if (!this.state.editing) {
+      return <h3>Posted by: {this.props.currentPost.author.username}</h3>;
+    }
+  }
+
   renderContent() {
     const contentText = this.props.currentPost.content;
     if (this.state.editing) {
@@ -119,6 +125,7 @@ class Post extends Component {
               <div className="title-with-tags">
                 {this.renderTitle()}
                 {this.renderTags()}
+                {this.renderAuthor()}
               </div>
             </div>
           </div>

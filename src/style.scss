@@ -28,13 +28,26 @@ nav {
     margin: 10px;
   }
 
+  .link-container {
+    display: flex;
+    flex-direction: row;
+  }
+
   ul {
+    list-style-type: none;
     display: flex;
     flex-direction: row;
     li {
       height: inherit;
       margin-right: 20px;
     }
+  }
+  .signout-link:hover {
+    cursor: pointer
+  }
+  .signout-link{
+    list-style-type: none;
+    padding-right: 10px;
   }
 }
 
@@ -129,10 +142,12 @@ nav {
 .form-container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   * {
     border-radius: 5px;
     padding: 5px;
+    margin-top: 20px;
   }
   .title-input {
     height: 30px;
@@ -161,11 +176,11 @@ nav {
   }
 }
 
-.active {
-  color: red;
-}
-
 a {
   color: black;
   text-decoration: none;
+}
+
+.active {
+  color: red;
 }
