@@ -8,3 +8,7 @@ Redux was a fantastic way to deal with all of the various actions needed in this
 The nastiest bug I ran into was returning the state as I was improperly using Object.assign(). Figuring out how connect worked and the overall data flow worked took a bit, but once I figured it out for one piece it was easy to work it out for the rest of the parts.
 
 For extra credit, I did some field verification when creating a new post, just making sure fields aren't empty, and I decided to do a sports score website rather than a blog.
+
+## Part 2 w/ backend
+
+I found it relatively easy to link up authentication with the frontend. The bug that actually ended up giving me the most trouble was figuring out why history was undefined in some cases (I had to connect withRouter). Other than that the most time spent here was renaming variables so that everything flowed fine and adjusting layout. 
